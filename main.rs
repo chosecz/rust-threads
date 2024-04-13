@@ -6,10 +6,11 @@ mod b;
 
 pub struct Data {
     value: i32,
+    enabled: bool,
 }
 
 fn main() {
-    let data = Arc::new(Mutex::new(Data { value: 10 }));
+    let data = Arc::new(Mutex::new(Data { value: 10, enabled: true }));
 
     let data_for_a = Arc::clone(&data);
     let data_for_b = Arc::clone(&data);
